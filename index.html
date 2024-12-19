@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="estilo.css">
+    <title>The Boiled One</title>
+</head>
+<body>
+
+<div class="container">
+    <img src="patinha.png">
+    <p>AGENDAMENTO DE BANHO, TOSA, CORTES E PARQUE DE CACHORROS</p>
+</div>
+
+<div class="container2">
+  <h1>Nome do Pet:</h1>
+  <input id="nomepet" type="text" placeholder="Digite o nome do pet">
+  <h1>Raça do Pet:</h1>
+  <input id="raca" type="text" placeholder="Digite a raça do pet">
+  <h1>Nome do Dono:</h1>
+  <input id="Dono" type="text" placeholder="nome do dono">
+  <h1>Telefone para contato:</h1>
+  <input id="telefone" type="text" placeholder="Digite o telefone">
+
+  <button id="botão" onclick="agendar()">Agendar Vaga</button>
+
+  <div>
+    <table class="Agendamento" id="tabelaAgendamentos">
+        <tr>
+            <th>ID</th>
+            <th>Nome do pet</th>
+            <th>Raça</th>
+            <th>Telefone</th>
+            <th>Remover</th>
+        </tr>
+    </table>
+  </div>
+<script>
+    
+    function agendar(){
+        let nomepet = document.getElementById("nomepet").value
+        let raca = document.getElementById("raca").value
+        let dono = document.getElementById("Dono").value
+        let telefone = document.getElementById("telefone").value
+
+        let tabelaAgendamentos = document.getElementById("tabelaAgendamentos")
+        let linha = tabelaAgendamentos.insertRow()
+        let celulaId = linha.insertCell()
+        let celulaNome = linha.insertCell()
+        let celulaRaca = linha.insertCell()
+        let celulaTelefone = linha.insertCell()
+        let celulaRemover = linha.insertCell()
+
+        celulaId.innerHTML = tabelaAgendamentos.rows.length
+        celulaNome.innerHTML = nomepet
+        celulaRaca.innerHTML = raca
+        celulaTelefone.innerHTML = telefone
+        celulaRemover.innerHTML = "<button onclick='remover(this)'>Remover</button>"
+    }
+
+</script>
+
+</div>
+
+
+
+</body>
+</html>
